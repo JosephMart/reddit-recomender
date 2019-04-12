@@ -1,0 +1,14 @@
+{
+	"python.pythonPath": "venv/bin/python",
+	"python.formatting.provider": "black",
+	"python.formatting.blackPath": "./venv/bin/black",
+	"python.formatting.blackArgs": [
+		"--line-length",
+		"100",
+		"--target-version",
+		"py36"
+	],
+	"python.autoComplete.extraPaths": [
+		"/home/tristan957/Projects/reddit-recommender/src"
+	],
+}
