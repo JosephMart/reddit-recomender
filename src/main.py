@@ -9,7 +9,7 @@ import traceback
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/search', methods = ['POST'])
+@app.route("/search", methods=["POST"])
 def search():
     body = request.get_json()
 
@@ -28,6 +28,13 @@ def search():
     result = utils.order(query_words_lmtzd, docs_lmtzd, doc_subs)
 
     return jsonify({"result": list(result)})
+
+@app.route("/autocomplete", methods=["GET"])
+def autocomplete():
+    q = request.args.get("q")
+    over18 = request.args.get("over18")
+    results = solr.autocomplete(q, over18)
+    return jsonify({"results": results})
 
 app.run(port=8080)
 
