@@ -1,3 +1,4 @@
 *.http
+*.env
 __pycache__
 venv
