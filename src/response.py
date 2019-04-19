@@ -7,11 +7,13 @@ class Subreddit:
     title: str = None
     description: str = None
     over_18: bool = None
+    display_name: str = None
 
     @staticmethod
     def from_json(j: Dict[str, Union[str, int]]):
         s = Subreddit()
         s._id = j["id"]
+        s.display_name = j["display_name"][0]
         try:
             s.description = j["public_description"][0]
         except:
@@ -25,15 +27,9 @@ class Subreddit:
     def to_json(self):
         return {
             "id": self._id,
+            "display_name": self.display_name
             "subscribers": self.subscribers,
             "title": self.title,
             "description": self.description,
             "over18": self.over_18
         }
-
-# class Response:
-#     num_found: int = None
-#     start: int = None
-#     subreddits: List[Subreddit] = []
-
-    # def from_solr_response(j: Dict[str, Union[str, int]]) -> Res
