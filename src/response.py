@@ -28,6 +28,7 @@ class Subreddit:
             "subscribers": self.subscribers,
             "title": self.title,
             "description": self.description,
+            "over18": self.over_18
         }
 
 # class Response:
