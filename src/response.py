@@ -27,7 +27,7 @@ class Subreddit:
     def to_json(self):
         return {
             "id": self._id,
-            "display_name": self.display_name
+            "display_name": self.display_name,
             "subscribers": self.subscribers,
             "title": self.title,
             "description": self.description,
