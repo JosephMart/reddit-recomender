@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from typing import List
 from response import Subreddit
 import solr
@@ -6,6 +7,7 @@ import utils
 import traceback
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/search', methods = ['POST'])
 def search():
