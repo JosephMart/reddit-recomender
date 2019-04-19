@@ -12,7 +12,10 @@ class Subreddit:
     def from_json(j: Dict[str, Union[str, int]]):
         s = Subreddit()
         s._id = j["id"]
-        s.description = j["public_description"][0]
+        try:
+            s.description = j["public_description"][0]
+        except:
+            s.description = ""
         s.title = j["title"][0]
         s.subscribers = j["subscribers"][0]
         s.over_18 = j["over18"][0]
