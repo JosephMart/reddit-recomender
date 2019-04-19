@@ -5,6 +5,7 @@
 ```shell
 docker-compose up
 docker exec -it --user=solr solr_server ./setup.sh
+python3 src/main.py
 ```
 
 Then navigate to `http://localhost:8983`.
