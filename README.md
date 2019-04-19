@@ -2,6 +2,11 @@
 
 ## Setup
 
+Set the following environment variables:
+
+* `SOLR_SERVER`
+* `CORE_NAME`
+
 ```shell
 docker-compose up
 docker exec -it --user=solr solr_server ./setup.sh
